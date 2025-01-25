@@ -6,7 +6,7 @@ import { useState } from "react";
 import Extradata from "@/action/page"; // Assuming Extradata is a server-side action
 
 
-export function Edit_snippets({ snippet }: { snippet: snippets }) {
+export default function Edit_snippets({ snippet }: { snippet: snippets }) {
   const [code, setCode] = useState(snippet.code);
 
 
@@ -21,10 +21,6 @@ export function Edit_snippets({ snippet }: { snippet: snippets }) {
       alert("Failed to update snippet.");
     }
   };
-
-
-  
-
   return (
     <div className="flex flex-col items-center justify-start p-6 overflow-hidden">
       <div className=" px-6 py-4 rounded-xl text-3xl font-semibold tracking-wider flex justify-between items-center w-full max-w-4xl mb-8">

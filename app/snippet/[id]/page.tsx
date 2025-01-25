@@ -38,13 +38,8 @@ export default async function Snippet_view({ params }: { params: Promise<{ id: s
                 Delete
               </button>
               </form>
-             
-              
-             
             </div>
-          </div>
-
-          
+          </div>     
           <div className="bg-slate-100 p-4 rounded-lg">
             <pre>
               <code>{data.code}</code>
