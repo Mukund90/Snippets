@@ -1,28 +1,4 @@
-import { prisma } from "@/lib/prisma";
-import { redirect } from 'next/navigation'
-
-export async function creates(formData: FormData) {
-  "use server"; 
-
-  const title = formData.get("title") as string;
-  const description = formData.get("description") as string;
-
-  if (!title || !description) {
-    throw new Error("Title and description are required");
-  }
-
-  const data = await prisma.snippets.create({
-    data: {
-      title,
-      code: description,
-    },
-  });
-
-  console.log("Snippet created:", data);
-
-  redirect('http://localhost:3000')
-}
-
+import { creates } from "@/action/page";
 export default function NewSnippet() {
   return (
     <form action={creates}>

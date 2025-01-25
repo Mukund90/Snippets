@@ -1,13 +1,13 @@
 
 import { prisma } from '@/lib/prisma';
 import React from 'react';
-import { Edit_snippets } from '@/Components';
+import Edit_snippets from '@/Components';
 
 
-export default async function Snippet_view({ params }: { params: { id: string } }) {
+export default async function Snippet_view({ params }:{params:Promise<{ id: string }>}) {
   try {
     
-    const data = params.id;
+    const data = (await params).id;
     const data_id = parseInt(data.slice(7), 10); 
     console.log(data_id);
 
